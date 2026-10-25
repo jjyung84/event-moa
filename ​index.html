@@ -1,15 +1,55 @@
-// 웹앱에서 GitHub에 올라간 json을 직접 당겨오는 코드
-async function fetchOnlineEvents() {
-    const GITHUB_USERNAME = "본인_GitHub_아이디";
-    const REPO_NAME = "본인_저장소_이름";
-    const rawUrl = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/events.json`;
-    
-    try {
-        const res = await fetch(rawUrl);
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 모아</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f7; color: #333; }
+    h1 { text-align: center; color: #1d1d1f; font-size: 24px; margin-bottom: 20px; }
+    .card { background: white; border-radius: 12px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .card a { font-size: 16px; font-weight: bold; color: #0066cc; text-decoration: none; display: block; margin-bottom: 6px; }
+    .card a:hover { text-decoration: underline; }
+    .meta { font-size: 13px; color: #86868b; }
+    #loading { text-align: center; padding: 40px; color: #86868b; }
+  </style>
+</head>
+<body>
+  <h1>🎉 최신 이벤트 모아</h1>
+  <div id="loading">이벤트를 불러오는 중입니다...</div>
+  <div id="event-list"></div>
+
+  <script>
+    async function loadEvents() {
+      const loadingEl = document.getElementById('loading');
+      const listEl = document.getElementById('event-list');
+      
+      try {
+        // events.json 파일 불러오기
+        const res = await fetch('./events.json');
+        if (!res.ok) throw new Error('데이터 불러오기 실패');
+        
         const data = await res.json();
-        return data;
-    } catch (e) {
-        console.error("온라인 데이터 불러오기 실패", e);
+        loadingEl.style.display = 'none';
+        
+        if (!data || data.length === 0) {
+          listEl.innerHTML = '<p style="text-align:center;">등록된 이벤트가 없습니다.</p>';
+          return;
+        }
+
+        listEl.innerHTML = data.map(item => `
+          <div class="card">
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
+            <div class="meta">${item.date || ''} | ${item.source || '이벤트'}</div>
+          </div>
+        `).join('');
+      } catch (e) {
+        console.error(e);
+        loadingEl.innerText = '이벤트 데이터를 불러오지 못했습니다.';
+      }
     }
-}
- 
+
+    loadEvents();
+  </script>
+</body>
+</html>
