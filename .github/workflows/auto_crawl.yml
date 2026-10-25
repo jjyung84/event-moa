@@ -1,0 +1,34 @@
+name: Event Auto Crawler
+
+on:
+  schedule:
+    # 한국 시간 기준 매일 6시간마다 자동 실행
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # 버튼 눌러서 즉시 실행도 가능
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 코드 불러오기
+        uses: actions/checkout@v3
+
+      - name: 파이썬 환경 설정
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 필요한 라이브러리 설치
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: 크롤러 실행
+        run: |
+          python crawler.py
+
+      - name: 변경된 events.json 자동 커밋 및 푸시
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add events.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 자동 수집: 최신 이벤트 데이터 업데이트" && git push)
