@@ -2,19 +2,26 @@ name: Event Auto Crawler
 
 on:
   schedule:
-    # 한국 시간 기준 매일 6시간마다 자동 실행
+    # 6시간마다 자동 실행
     - cron: '0 */6 * * *'
-  workflow_dispatch: # 버튼 눌러서 즉시 실행도 가능
+  workflow_dispatch: # 수동 실행 버튼 활성화
+
+# 저장소에 events.json을 커밋/푸시하기 위한 쓰기 권한 부여
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Seoul # 한국 시간대 설정
+
     steps:
       - name: 저장소 코드 불러오기
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 파이썬 환경 설정
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -31,4 +38,4 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add events.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 자동 수집: 최신 이벤트 데이터 업데이트" && git push)
+          git diff --staged --quiet || (git commit -m "🤖 자동 수집: 최신 이벤트 데이터 업데이트" && git push)
