@@ -71,11 +71,12 @@ def fetch_ppomppu_events():
         print(f"❌ 수집 오류 발생: {e}")
 
 if __name__ == "__main__":
-    print("🚀 실시간 이벤트 자동 크롤링 시작...")
+    print("🚀 실시간 이벤트 자동 크롤러 시작...")
     fetch_ppomppu_events()
     
-    # 결과를 events.json 파일로 저장
+    # 결과를 events.json 파일로 저장 (if문 안쪽으로 들여쓰기 포함해서 이동!)
     with open('events.json', 'w', encoding='utf-8') as f:
         json.dump(events, f, ensure_ascii=False, indent=2)
         
-    print(f"✅ 총 {len(events)}개 이벤트 수집 완료 및 events.json 업데이트 완!")
+    print(f"✅ 총 {len(events)}개 이벤트 수집 완료!")
+
