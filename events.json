@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "[테스트] 뽐뿌 이벤트 모아 첫 번째 게시글입니다!",
+    "category": "쇼핑/정보",
+    "type": "뽐뿌",
+    "organizer": "이벤트모아",
+    "price": "무료",
+    "endDate": "2026-12-31",
+    "difficulty": "하",
+    "url": "https://www.ppomppu.co.kr",
+    "views": 150,
+    "completed": false,
+    "favorite": false,
+    "createdAt": "2026-10-25"
+  }
+]
