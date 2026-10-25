@@ -1,0 +1,14 @@
+// 웹앱에서 GitHub에 올라간 json을 직접 당겨오는 코드
+async function fetchOnlineEvents() {
+    const GITHUB_USERNAME = "본인_GitHub_아이디";
+    const REPO_NAME = "본인_저장소_이름";
+    const rawUrl = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/events.json`;
+    
+    try {
+        const res = await fetch(rawUrl);
+        const data = await res.json();
+        return data;
+    } catch (e) {
+        console.error("온라인 데이터 불러오기 실패", e);
+    }
+}
