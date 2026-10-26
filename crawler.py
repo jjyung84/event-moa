@@ -37,14 +37,12 @@ def is_expired_title(title):
         return True
 
     now = datetime.now()
-    # (~10/31), (~11.5), (7.20~7.31) 등 물결 뒤 마감일 추출
     match = re.search(r'~\s*(\d{1,2})[./월]\s*(\d{1,2})', title)
     if match:
         month, day = int(match.group(1)), int(match.group(2))
         if 1 <= month <= 12 and 1 <= day <= 31:
             try:
                 end_dt = datetime(now.year, month, day, 23, 59, 59)
-                # 현재보다 과거 날짜면 종료된 이벤트로 간주 (단, 연말에 내년 1~2월 표기 예외 처리)
                 if end_dt < now and not (now.month == 12 and month <= 2):
                     return True
             except ValueError:
@@ -53,7 +51,7 @@ def is_expired_title(title):
 
 
 def extract_end_date(title):
-    """제목에서 마감일 추출 (없으면 상시/미정 반환)"""
+    """제목에서 마감일 추출 (없으면 상시/본문참고 반환)"""
     now = datetime.now()
     match = re.search(r'~\s*(\d{1,2})[./월]\s*(\d{1,2})', title)
     if match:
@@ -132,10 +130,8 @@ def fetch_ppomppu():
             posts = soup.select('tr.baseList, tr.list0, tr.list1')
 
             for post in posts:
-                # 취소선(종료된 글) 제외
                 if post.select_one('del, s, strike'):
                     continue
-                # 등록일 확인: 과거 연도(예: 20/07/30) 게시글 제외, 오늘(시:분:초) 또는 올해(26/..) 글만 허용
                 date_text = post.get_text()
                 if re.search(r'\b(1\d|2[0-5])/\d{2}/\d{2}\b', date_text):
                     continue
@@ -185,7 +181,6 @@ def fetch_clien():
         posts = soup.select('div.list_item.symph_row')
 
         for post in posts:
-            # 품절/종료 표시 글 제외
             if post.select_one('span.icon_info'):
                 info_txt = post.select_one('span.icon_info').get_text(strip=True)
                 if info_txt in ["품절", "종료"]:
@@ -208,47 +203,4 @@ def fetch_coolenjoy():
     url = "https://coolenjoy.net/bbs/jirum"
     try:
         res = requests.get(url, headers=headers, timeout=10)
-        soup = BeautifulSoup(res.text, 'html.parser')
-        posts = soup.select('td.td_subject a')
-
-        for title_tag in posts:
-            title = title_tag.get_text(strip=True)
-            href = title_tag.get('href', '')
-            if href and 'jirum/' in href:
-                add_event(title, href, "쿨엔조이")
-    except Exception as e:
-        print(f"❌ 쿨엔조이 수집 오류: {e}")
-
-
-def fetch_brand_news_rss():
-    """5. 실시간 기업/프랜차이즈 경품·기프티콘 이벤트 수집 (구글 뉴스 RSS)"""
-     rss_url = "https://news.google.com/rss/search?q=%EC%9D%B4%EB%B2%A4%ED%8A%B8+(%EA%B8%B0%ED%94%84%ED%8B%B0%EC%BD%98+OR+%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4+OR+%EC%B6%94%EC%B2%A8+OR+%EC%84%A0%EC%B0%A9%EC%88%9C)+when:3d&hl=ko&gl=KR&ceid=KR:ko"
-    try:
-        res = requests.get(rss_url, headers=headers, timeout=10)
-        root = ET.fromstring(res.content)
-        for item in root.findall('.//item')[:25]:
-            title = item.findtext('title', '')
-            link = item.findtext('link', '')
-            # 뉴스 제목 뒤 언론사명 제거
-            title = re.sub(r'\s*-\s*[^-]+$', '', title)
-            if title and link:
-                add_event(title, link, "브랜드/뉴스")
-    except Exception as e:
-        print(f"❌ 브랜드 이벤트 RSS 수집 오류: {e}")
-
-
-if __name__ == "__main__":
-    print("🚀 멀티 사이트 이벤트 크롤러 시작...")
-    fetch_ppomppu()
-    fetch_ruliweb()
-    fetch_clien()
-    fetch_coolenjoy()
-    fetch_brand_news_rss()
-
-    # 🍯 알짜 이벤트를 상단에 우선 배치
-    events.sort(key=lambda x: (not x.get("isHoney", False)))
-
-    with open('events.json', 'w', encoding='utf-8') as f:
-        json.dump(events, f, ensure_ascii=False, indent=2)
-
-    print(f"✅ 총 {len(events)}개 최신 이벤트 수집 완료!")
+        soup = BeautifulSoup(res.text, '
