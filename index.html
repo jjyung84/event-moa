@@ -3,55 +3,411 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>이벤트 모아</title>
+  <title>이벤트 모아 - 멀티 커뮤니티 핫딜/이벤트</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0 auto; padding: 20px; background-color: #f5f5f7; color: #333; max-width: 800px; }
-    h1 { text-align: center; color: #1d1d1f; font-size: 24px; margin-bottom: 20px; }
-    .card { background: white; border-radius: 12px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-    .card a { font-size: 16px; font-weight: bold; color: #0066cc; text-decoration: none; display: block; margin-bottom: 8px; line-height: 1.4; }
-    .card a:hover { text-decoration: underline; }
-    .meta { font-size: 13px; color: #86868b; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-    .badge { background-color: #e8f0fe; color: #1967d2; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 500; }
-    .diff { background-color: #f1f3f4; color: #5f6368; padding: 2px 8px; border-radius: 6px; font-size: 12px; }
-    #loading { text-align: center; padding: 40px; color: #86868b; }
+    :root {
+      --bg: #f4f5f8;
+      --card: #ffffff;
+      --primary: #2563eb;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
+      margin: 0 auto;
+      padding: 16px;
+      background-color: var(--bg);
+      color: var(--text);
+      max-width: 860px;
+    }
+    header { text-align: center; margin-bottom: 16px; }
+    h1 { font-size: 24px; margin: 4px 0 8px; color: #0f172a; }
+    .subtitle { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+
+    /* 상단 통계 요약 */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .stat-box {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 10px 6px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: 0.15s;
+    }
+    .stat-box.active { border-color: var(--primary); background: #eff6ff; }
+    .stat-num { font-size: 18px; font-weight: 700; color: var(--primary); }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* 검색 및 옵션 바 */
+    .controls {
+      background: var(--card);
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      margin-bottom: 14px;
+    }
+    .search-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+    .search-input {
+      flex: 1;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+    }
+    .search-input:focus { border-color: var(--primary); }
+    .hide-toggle {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      color: var(--text);
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* 필터 탭 */
+    .filter-group {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      margin-bottom: 6px;
+      scrollbar-width: none;
+    }
+    .filter-group::-webkit-scrollbar { display: none; }
+    .chip {
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: #475569;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .chip.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* 이벤트 카드 */
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      border-left: 4px solid transparent;
+      transition: 0.15s;
+    }
+    .card.honey { border-left-color: #f59e0b; }
+    .card.completed {
+      opacity: 0.55;
+      background: #f8fafc;
+    }
+    .card.completed .title-link {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .title-link {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: #1e293b;
+      text-decoration: none;
+      line-height: 1.4;
+      flex: 1;
+      word-break: break-word;
+    }
+    .title-link:hover { color: var(--primary); text-decoration: underline; }
+
+    .actions {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .btn-icon {
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 8px;
+      padding: 5px 8px;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .btn-icon.fav.active {
+      background: #fef3c7;
+      border-color: #f59e0b;
+      color: #b45309;
+      font-weight: 600;
+    }
+    .btn-icon.done.active {
+      background: #dcfce7;
+      border-color: #22c55e;
+      color: #15803d;
+      font-weight: 600;
+    }
+
+    .meta {
+      margin-top: 10px;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .badge { padding: 2px 7px; border-radius: 5px; font-weight: 600; font-size: 11.5px; }
+    .badge-source { background: #e0e7ff; color: #3730a3; }
+    .badge-cat { background: #f1f5f9; color: #334155; }
+    .badge-honey { background: #fef3c7; color: #d97706; }
+    .badge-prize { background: #fce7f3; color: #be185d; }
+    .badge-diff { background: #f3f4f6; color: #4b5563; }
+
+    #loading, .empty-msg {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
-  <h1>🎉 최신 이벤트 모아</h1>
+  <header>
+    <h1>🎉 실시간 이벤트 & 핫딜 모아</h1>
+    <div class="subtitle" id="last-updated">데이터를 불러오는 중...</div>
+  </header>
+
+  <!-- 상단 빠른 모아보기 대시보드 -->
+  <div class="stats-bar">
+    <div class="stat-box active" onclick="setMode('all')" id="mode-all">
+      <div class="stat-num" id="cnt-all">0</div>
+      <div class="stat-label">전체</div>
+    </div>
+    <div class="stat-box" onclick="setMode('honey')" id="mode-honey">
+      <div class="stat-num" id="cnt-honey">0</div>
+      <div class="stat-label">🍯 알짜만</div>
+    </div>
+    <div class="stat-box" onclick="setMode('fav')" id="mode-fav">
+      <div class="stat-num" id="cnt-fav">0</div>
+      <div class="stat-label">⭐ 찜한글</div>
+    </div>
+    <div class="stat-box" onclick="setMode('done')" id="mode-done">
+      <div class="stat-num" id="cnt-done">0</div>
+      <div class="stat-label">✅ 참여완료</div>
+    </div>
+  </div>
+
+  <!-- 검색 및 필터 영역 -->
+  <div class="controls">
+    <div class="search-row">
+      <input type="text" id="search-input" class="search-input" placeholder="검색어 입력 (예: 스타벅스, 네이버페이, 퀴즈, 무료)" oninput="render()">
+      <label class="hide-toggle">
+        <input type="checkbox" id="hide-completed" onchange="toggleHideCompleted()">
+        완료 숨기기
+      </label>
+    </div>
+
+    <!-- 출처 사이트 필터 -->
+    <div class="filter-group" id="source-filters">
+      <button class="chip active" onclick="setSource('전체')">전체 사이트</button>
+      <button class="chip" onclick="setSource('뽐뿌')">뽐뿌</button>
+      <button class="chip" onclick="setSource('루리웹')">루리웹</button>
+      <button class="chip" onclick="setSource('클리앙')">클리앙</button>
+      <button class="chip" onclick="setSource('쿨엔조이')">쿨엔조이</button>
+      <button class="chip" onclick="setSource('브랜드/뉴스')">브랜드/뉴스</button>
+    </div>
+
+    <!-- 카테고리 필터 -->
+    <div class="filter-group" id="cat-filters" style="margin-bottom:0;">
+      <button class="chip active" onclick="setCategory('전체')">전체 분야</button>
+      <button class="chip" onclick="setCategory('식음료/외식')">🍔 식음료/외식</button>
+      <button class="chip" onclick="setCategory('쇼핑/생활')">🛍️ 쇼핑/생활</button>
+      <button class="chip" onclick="setCategory('기업/금융')">🏦 기업/금융</button>
+      <button class="chip" onclick="setCategory('IT/게임')">🎮 IT/게임</button>
+      <button class="chip" onclick="setCategory('공공/공모전')">🏛️ 공공/공모전</button>
+    </div>
+  </div>
+
   <div id="loading">이벤트를 불러오는 중입니다...</div>
   <div id="event-list"></div>
 
   <script>
-    async function loadEvents() {
-      const loadingEl = document.getElementById('loading');
-      const listEl = document.getElementById('event-list');
-      
-      try {
-        // 캐시 방지를 위해 현재 시간 파라미터 추가
-        const res = await fetch(`./events.json?t=${Date.now()}`);
-        if (!res.ok) throw new Error('데이터 불러오기 실패');
-        
-        const data = await res.json();
-        loadingEl.style.display = 'none';
-        
-        if (!data || data.length === 0) {
-          listEl.innerHTML = '<p style="text-align:center;">등록된 이벤트가 없습니다.</p>';
-          return;
-        }
+    let allEvents = [];
+    let currentMode = 'all'; // all, honey, fav, done
+    let currentSource = '전체';
+    let currentCategory = '전체';
 
-        listEl.innerHTML = data.map(item => `
-          <div class="card">
-            <a href="${item.url || item.link || '#'}" target="_blank" rel="noopener noreferrer">${item.title}</a>
+    // localStorage에서 완료/즐겨찾기 내역 불러오기
+    let completedIds = new Set(JSON.parse(localStorage.getItem('evt_completed') || '[]'));
+    let favIds = new Set(JSON.parse(localStorage.getItem('evt_fav') || '[]'));
+    let hideCompleted = JSON.parse(localStorage.getItem('evt_hide_done') || 'false');
+
+    document.getElementById('hide-completed').checked = hideCompleted;
+
+    function saveState() {
+      localStorage.setItem('evt_completed', JSON.stringify([...completedIds]));
+      localStorage.setItem('evt_fav', JSON.stringify([...favIds]));
+      localStorage.setItem('evt_hide_done', JSON.stringify(hideCompleted));
+    }
+
+    function toggleDone(id) {
+      if (completedIds.has(id)) completedIds.delete(id);
+      else completedIds.add(id);
+      saveState();
+      render();
+    }
+
+    function toggleFav(id) {
+      if (favIds.has(id)) favIds.delete(id);
+      else favIds.add(id);
+      saveState();
+      render();
+    }
+
+    function toggleHideCompleted() {
+      hideCompleted = document.getElementById('hide-completed').checked;
+      saveState();
+      render();
+    }
+
+    function setMode(mode) {
+      currentMode = mode;
+      document.querySelectorAll('.stat-box').forEach(el => el.classList.remove('active'));
+      document.getElementById(`mode-${mode}`).classList.add('active');
+      render();
+    }
+
+    function setSource(src) {
+      currentSource = src;
+      document.querySelectorAll('#source-filters .chip').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.includes(src) || (src === '전체' && btn.textContent === '전체 사이트'));
+      });
+      render();
+    }
+
+    function setCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('#cat-filters .chip').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.includes(cat) || (cat === '전체' && btn.textContent === '전체 분야'));
+      });
+      render();
+    }
+
+    function updateCounts() {
+      document.getElementById('cnt-all').textContent = allEvents.length;
+      document.getElementById('cnt-honey').textContent = allEvents.filter(e => e.isHoney).length;
+      document.getElementById('cnt-fav').textContent = allEvents.filter(e => favIds.has(e.id)).length;
+      document.getElementById('cnt-done').textContent = allEvents.filter(e => completedIds.has(e.id)).length;
+    }
+
+    function render() {
+      updateCounts();
+      const listEl = document.getElementById('event-list');
+      const query = document.getElementById('search-input').value.trim().toLowerCase();
+
+      const filtered = allEvents.filter(item => {
+        const isDone = completedIds.has(item.id);
+        const isFav = favIds.has(item.id);
+
+        if (currentMode === 'honey' && !item.isHoney) return false;
+        if (currentMode === 'fav' && !isFav) return false;
+        if (currentMode === 'done' && !isDone) return false;
+
+        // 완료 숨기기 켜져 있을 때 (단, '참여완료' 탭을 직접 볼 때는 표시)
+        if (hideCompleted && isDone && currentMode !== 'done') return false;
+
+        const src = item.source || '뽐뿌';
+        if (currentSource !== '전체' && src !== currentSource) return false;
+
+        const cat = item.category || '기업/금융';
+        if (currentCategory !== '전체' && cat !== currentCategory) return false;
+
+        if (query && !item.title.toLowerCase().includes(query) && !(item.prize || '').toLowerCase().includes(query)) {
+          return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        listEl.innerHTML = '<div class="empty-msg">조건에 맞는 이벤트가 없습니다.</div>';
+        return;
+      }
+
+      listEl.innerHTML = filtered.map(item => {
+        const isDone = completedIds.has(item.id);
+        const isFav = favIds.has(item.id);
+        const src = item.source || '뽐뿌';
+        return `
+          <div class="card ${item.isHoney ? 'honey' : ''} ${isDone ? 'completed' : ''}">
+            <div class="card-top">
+              <a class="title-link" href="${item.url || item.link || '#'}" target="_blank" rel="noopener noreferrer">
+                ${item.title}
+              </a>
+              <div class="actions">
+                <button class="btn-icon fav ${isFav ? 'active' : ''}" onclick="toggleFav('${item.id}')" title="즐겨찾기">
+                  ${isFav ? '⭐ 찜' : '☆'}
+                </button>
+                <button class="btn-icon done ${isDone ? 'active' : ''}" onclick="toggleDone('${item.id}')" title="참여완료 체크">
+                  ${isDone ? '✅ 완료' : '⬜ 참여'}
+                </button>
+              </div>
+            </div>
             <div class="meta">
-              <span class="badge">${item.category || item.source || '이벤트'}</span>
-              <span class="diff">난이도: ${item.difficulty || '하'}</span>
-              <span>📅 ${item.createdAt || item.date || ''}</span>
+              <span class="badge badge-source">${src}</span>
+              ${item.isHoney ? '<span class="badge badge-honey">🍯 알짜</span>' : ''}
+              <span class="badge badge-cat">${item.category || '이벤트'}</span>
+              ${item.prize && item.prize !== '본문 참고' && item.prize !== '게시물 참고' ? `<span class="badge badge-prize">🎁 ${item.prize}</span>` : ''}
+              <span class="badge badge-diff">난이도: ${item.difficulty || '하'}</span>
+              <span>⏰ 마감: ${item.endDate || '상시'}</span>
             </div>
           </div>
-        `).join('');
+        `;
+      }).join('');
+    }
+
+    async function loadEvents() {
+      const loadingEl = document.getElementById('loading');
+      try {
+        const res = await fetch(`./events.json?t=${Date.now()}`);
+        if (!res.ok) throw new Error('데이터 불러오기 실패');
+        allEvents = await res.json();
+        loadingEl.style.display = 'none';
+
+        if (allEvents.length > 0 && allEvents[0].createdAt) {
+          document.getElementById('last-updated').textContent = `최근 업데이트: ${allEvents[0].createdAt} (6시간 주기 자동 갱신)`;
+        } else {
+          document.getElementById('last-updated').textContent = '실시간 수집 중';
+        }
+        render();
       } catch (e) {
         console.error(e);
-        loadingEl.innerText = '이벤트 데이터를 불러오지 못했습니다. (Actions에서 크롤러를 먼저 실행해 주세요)';
+        loadingEl.innerText = '이벤트 데이터를 불러오지 못했습니다.';
       }
     }
 
