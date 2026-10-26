@@ -137,4 +137,63 @@ def fetch_ruliweb():
         posts = soup.select('tr.table_body')
         for post in posts:
             if 'notice' in post.get('class', []):
-                
+                continue
+            title_tag = post.select_one('a.deco, a.subject_link')
+            if not title_tag:
+                continue
+            title = title_tag.get_text(strip=True)
+            link = title_tag.get('href', '').split('?')[0]
+            if link:
+                add_event(title, link, "루리웹")
+    except Exception as e:
+        print(f"⚠️ 루리웹 수집 중 예외 발생: {e}")
+
+def fetch_clien():
+    url = "https://www.clien.net/service/board/jirum"
+    try:
+        res = requests.get(url, headers=headers, timeout=10)
+        soup = BeautifulSoup(res.text, 'html.parser')
+        posts = soup.select('div.list_item.symph_row')
+        for post in posts:
+            if post.select_one('span.icon_info'):
+                info_txt = post.select_one('span.icon_info').get_text(strip=True)
+                if info_txt in ["품절", "종료"]:
+                    continue
+            title_tag = post.select_one('span.list_subject a, a.list_subject')
+            if not title_tag:
+                continue
+            title = title_tag.get_text(strip=True)
+            href = title_tag.get('href', '')
+            if href:
+                link = urljoin("https://www.clien.net", href.split('?')[0])
+                add_event(title, link, "클리앙")
+    except Exception as e:
+        print(f"⚠️ 클리앙 수집 중 예외 발생: {e}")
+
+def fetch_coolenjoy():
+    url = "https://coolenjoy.net/bbs/jirum"
+    try:
+        res = requests.get(url, headers=headers, timeout=10)
+        soup = BeautifulSoup(res.text, 'html.parser')
+        posts = soup.select('td.td_subject a')
+        for title_tag in posts:
+            title = title_tag.get_text(strip=True)
+            href = title_tag.get('href', '')
+            if href and 'jirum/' in href:
+                add_event(title, href, "쿨엔조이")
+    except Exception as e:
+        print(f"⚠️ 쿨엔조이 수집 중 예외 발생: {e}")
+
+if __name__ == "__main__":
+    print("🚀 멀티 사이트 이벤트 안전 크롤러 시작...")
+    fetch_ppomppu()
+    fetch_ruliweb()
+    fetch_clien()
+    fetch_coolenjoy()
+
+    events.sort(key=lambda x: (not x.get("isHoney", False)))
+
+    with open('events.json', 'w', encoding='utf-8') as f:
+        json.dump(events, f, ensure_ascii=False, indent=2)
+
+    print(f"✅ 총 {len(events)}개 이벤트 수집 및 저장 완료!")
