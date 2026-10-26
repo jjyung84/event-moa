@@ -1,29 +1,5 @@
 [
   {
-    "id": "evt_17ed6ce84b",
-    "title": "[네이버페이]100포 유시몰 알림받기",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120033",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_94216ecc0f",
-    "title": "[네이버페이]제주항공 12원 받으세요",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120030",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
     "id": "evt_43829195ea",
     "title": "[네이버페이]카페 할인",
     "source": "뽐뿌",
@@ -33,163 +9,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120028",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_55acbc842d",
-    "title": "[네이버페이]컬리N마트, 벤츠, 키움증권 등 90원 받으세요",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120012",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_fba702eb25",
-    "title": "[네이버페이]마이카 아이나비 랜덤포",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120011",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_fb80682310",
-    "title": "[네이버페이]센트룸, 스타벅스엣홈, 네스카페 등 90원 받으세요",
-    "source": "뽐뿌",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "스타벅스",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120009",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_49cd14a211",
-    "title": "[네이버페이]애경몰, 크로스, 피죤 등 90원 받으세요",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120008",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_bc0d7fe620",
-    "title": "[네이버페이]로보락, 메디큐브, 덴프스 등 90원 받으세요",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120007",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_be4bb03359",
-    "title": "[네이버페이]마인드브릿지, 대웅제약, DB손해보험 등 90원 받으세요",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120005",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_287f135522",
-    "title": "[네이버페이]유시몰 알림받기 100원(7)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108345",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_a3aa0785ae",
-    "title": "[네이버페이] 라방 랜덤 5원(2)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108341",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_9e32517ca5",
-    "title": "[쉐이크쉑] 해피포인트앱 쉑버거 1+1 쿠폰 (10/26~30)(2)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108338",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_ea7738818e",
-    "title": "[맥도날드앱] 더블상스치 6천원,쿼터파운더+치즈버거6천원 외(10/26~...(2)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108342",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_cb2c36e016",
-    "title": "[네이버페이] 카페 2천원 이상 결제시 500원 적립 (10/26~11/...(1)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108337",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_20a474c63c",
-    "title": "[네이버] 컬쳐랜드상품권 5만원권 (46,500원/무료)(5)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108336",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_5aa181d95b",
-    "title": "[네이버페이] 일일적립, 클릭 569원, 퀴즈미션, 라이브예고 29원(51)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108334",
-    "createdAt": "2026-10-26 10:55"
+    "createdAt": "2026-10-26 11:00"
   },
   {
     "id": "evt_a4db52c2fd",
@@ -201,7 +21,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108331",
-    "createdAt": "2026-10-26 10:55"
+    "createdAt": "2026-10-26 11:00"
   },
   {
     "id": "evt_6410a95b04",
@@ -213,7 +33,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108330",
-    "createdAt": "2026-10-26 10:55"
+    "createdAt": "2026-10-26 11:00"
   },
   {
     "id": "evt_17b93d1ec8",
@@ -225,7 +45,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108329",
-    "createdAt": "2026-10-26 10:55"
+    "createdAt": "2026-10-26 11:00"
   },
   {
     "id": "evt_4b497da936",
@@ -237,31 +57,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108328",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_ae10158628",
-    "title": "[버거킹] 와퍼주니어 2900원/롱치킨버거 3500원 (10/26~11/...(2)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "치킨",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108327",
-    "createdAt": "2026-10-26 10:55"
-  },
-  {
-    "id": "evt_280b741e9d",
-    "title": "[DigiArty] DearMob iPhone Manager 일시 무료",
-    "source": "클리앙",
-    "category": "기업/금융",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.clien.net/service/board/jirum/19280983",
-    "createdAt": "2026-10-26 10:55"
+    "createdAt": "2026-10-26 11:00"
   },
   {
     "id": "evt_b8d0808c16",
@@ -273,6 +69,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.clien.net/service/board/jirum/19280732",
-    "createdAt": "2026-10-26 10:55"
+    "createdAt": "2026-10-26 11:00"
   }
 ]
