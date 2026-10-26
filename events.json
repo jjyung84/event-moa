@@ -9,7 +9,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120041",
-    "createdAt": "2026-10-26 15:24"
+    "createdAt": "2026-10-26 23:16"
   },
   {
     "id": "evt_43829195ea",
@@ -21,11 +21,23 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120028",
-    "createdAt": "2026-10-26 15:24"
+    "createdAt": "2026-10-26 23:16"
+  },
+  {
+    "id": "evt_39ffc8e796",
+    "title": "[네이버쇼핑] 버거킹 치즈와퍼주니어+와퍼주니어+콜라R2+감자R 7,900...(11)",
+    "source": "루리웹",
+    "category": "식음료/외식",
+    "difficulty": "하",
+    "prize": "경품/상품권",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108373",
+    "createdAt": "2026-10-26 23:16"
   },
   {
     "id": "evt_53a91dab92",
-    "title": "[네이버쇼핑] 메가커피 2차 아메리카노 22%+멤버십 추가 할인 (10/...(17)",
+    "title": "[네이버쇼핑] 메가커피 2차 아메리카노 22%+멤버십 추가 할인 (10/...(23)",
     "source": "루리웹",
     "category": "식음료/외식",
     "difficulty": "하",
@@ -33,7 +45,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108356",
-    "createdAt": "2026-10-26 15:24"
+    "createdAt": "2026-10-26 23:16"
   },
   {
     "id": "evt_035edebce6",
@@ -45,7 +57,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108354",
-    "createdAt": "2026-10-26 15:24"
+    "createdAt": "2026-10-26 23:16"
   },
   {
     "id": "evt_b8d0808c16",
@@ -57,6 +69,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.clien.net/service/board/jirum/19280732",
-    "createdAt": "2026-10-26 15:24"
+    "createdAt": "2026-10-26 23:16"
   }
 ]
