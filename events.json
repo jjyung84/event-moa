@@ -1,5 +1,17 @@
 [
   {
+    "id": "evt_30a55e69f5",
+    "title": "네이버페이100",
+    "source": "뽐뿌",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "네이버페이",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120041",
+    "createdAt": "2026-10-26 15:24"
+  },
+  {
     "id": "evt_43829195ea",
     "title": "[네이버페이]카페 할인",
     "source": "뽐뿌",
@@ -9,55 +21,31 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120028",
-    "createdAt": "2026-10-26 11:00"
+    "createdAt": "2026-10-26 15:24"
   },
   {
-    "id": "evt_a4db52c2fd",
-    "title": "[네이버쇼핑] 노브랜드버거 신메뉴 세트 2종 22% 할인 (10/26~)(3)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108331",
-    "createdAt": "2026-10-26 11:00"
-  },
-  {
-    "id": "evt_6410a95b04",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22~24% & 금액권 10% 할인 (10/...",
+    "id": "evt_53a91dab92",
+    "title": "[네이버쇼핑] 메가커피 2차 아메리카노 22%+멤버십 추가 할인 (10/...(17)",
     "source": "루리웹",
     "category": "식음료/외식",
     "difficulty": "하",
     "prize": "커피",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108330",
-    "createdAt": "2026-10-26 11:00"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108356",
+    "createdAt": "2026-10-26 15:24"
   },
   {
-    "id": "evt_17b93d1ec8",
-    "title": "[네이버쇼핑] 메가커피 아메리카노 22%+멤버십 추가 할인 (10/26)(4)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "커피",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108329",
-    "createdAt": "2026-10-26 11:00"
-  },
-  {
-    "id": "evt_4b497da936",
-    "title": "[네이버페이] 넾다세일&네이버플러스 멤버십 데이 (10/26~)(5)",
+    "id": "evt_035edebce6",
+    "title": "[네이버페이]마이카방문 3종추가(5)",
     "source": "루리웹",
     "category": "쇼핑/상품권",
     "difficulty": "하",
     "prize": "네이버페이",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108328",
-    "createdAt": "2026-10-26 11:00"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108354",
+    "createdAt": "2026-10-26 15:24"
   },
   {
     "id": "evt_b8d0808c16",
@@ -69,6 +57,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.clien.net/service/board/jirum/19280732",
-    "createdAt": "2026-10-26 11:00"
+    "createdAt": "2026-10-26 15:24"
   }
 ]
