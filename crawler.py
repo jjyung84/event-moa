@@ -1,89 +1,254 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+import xml.etree.ElementTree as ET
 import json
+import re
+import hashlib
 from datetime import datetime
 
-# 수집 데이터 저장 리스트
 events = []
+seen_links = set()
 
-# PC 버전 HTML 구조를 받기 위해 Windows PC User-Agent 사용
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    'Referer': 'https://www.ppomppu.co.kr/'
+    'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
 }
 
-def fetch_ppomppu_events():
-    """뽐뿌 경품/이벤트 게시판 수집"""
-    url = "https://www.ppomppu.co.kr/zboard/zboard.php?id=event"
+# 제외할 키워드 (종료/무관 게시글 차단)
+EXCLUDE_KEYWORDS = ["종료", "마감", "품절", "완료", "당첨자", "발표", "공지", "규정", "질문", "후기"]
+
+# 🍯 알짜 이벤트 판별 키워드
+HONEY_KEYWORDS = [
+    "기프티콘", "스타벅스", "스벅", "편의점", "CU", "GS25", "세븐일레븐",
+    "100%", "전원", "무료", "출석", "퀴즈", "선착순", "네이버페이", "네페",
+    "상품권", "치킨", "커피", "아메리카노", "바나나우유", "포인트", "적립금", "0원"
+]
+
+
+def make_id(url):
+    """URL 기반 고유 ID 생성 (재수집 시에도 참여완료/즐겨찾기 유지)"""
+    return "evt_" + hashlib.md5(url.encode('utf-8')).hexdigest()[:10]
+
+
+def is_expired_title(title):
+    """제목에 포함된 날짜(~M/D, ~M.D)를 분석해 이미 지난 이벤트인지 판별"""
+    if any(k in title for k in EXCLUDE_KEYWORDS):
+        return True
+
+    now = datetime.now()
+    # (~10/31), (~11.5), (7.20~7.31) 등 물결 뒤 마감일 추출
+    match = re.search(r'~\s*(\d{1,2})[./월]\s*(\d{1,2})', title)
+    if match:
+        month, day = int(match.group(1)), int(match.group(2))
+        if 1 <= month <= 12 and 1 <= day <= 31:
+            try:
+                end_dt = datetime(now.year, month, day, 23, 59, 59)
+                # 현재보다 과거 날짜면 종료된 이벤트로 간주 (단, 연말에 내년 1~2월 표기 예외 처리)
+                if end_dt < now and not (now.month == 12 and month <= 2):
+                    return True
+            except ValueError:
+                pass
+    return False
+
+
+def extract_end_date(title):
+    """제목에서 마감일 추출 (없으면 상시/미정 반환)"""
+    now = datetime.now()
+    match = re.search(r'~\s*(\d{1,2})[./월]\s*(\d{1,2})', title)
+    if match:
+        month, day = int(match.group(1)), int(match.group(2))
+        if 1 <= month <= 12 and 1 <= day <= 31:
+            year = now.year + 1 if (now.month == 12 and month <= 2) else now.year
+            return f"{year}-{month:02d}-{day:02d}"
+    return "상시/본문참고"
+
+
+def classify_event(title):
+    """카테고리, 난이도, 경품, 알짜 여부 자동 분석"""
+    category = "기업/금융"
+    if any(k in title for k in ["치킨", "커피", "피자", "버거", "스타벅스", "스벅", "투썸", "메가커피", "배민", "요기요", "식당", "음료"]):
+        category = "식음료/외식"
+    elif any(k in title for k in ["쿠폰", "할인", "마트", "편의점", "쇼핑", "네이버페이", "네페", "무신사", "올리브영", "티몬", "지마켓", "옥션", "11번가"]):
+        category = "쇼핑/생활"
+    elif any(k in title for k in ["공공", "시청", "구청", "공사", "재단", "정부", "지자체", "공모전", "서포터즈", "박물관", "도서관"]):
+        category = "공공/공모전"
+    elif any(k in title for k in ["게임", "스팀", "플스", "닌텐도", "스위치", "엔비디아", "인텔", "갤럭시", "아이폰", "앱"]):
+        category = "IT/게임"
+
+    difficulty = "하"
+    if any(k in title for k in ["서포터즈", "공모전", "영상", "글짓기", "리뷰", "체험단"]):
+        difficulty = "상"
+    elif any(k in title for k in ["인스타", "팔로우", "소문내기", "공유", "댓글", "구독", "인증"]):
+        difficulty = "중"
+
+    prize = "본문 참고"
+    for p in ["스타벅스", "네이버페이", "상품권", "기프티콘", "치킨", "커피", "아메리카노", "포인트", "쿠폰", "무료"]:
+        if p in title:
+            prize = p
+            break
+
+    is_honey = any(k.lower() in title.lower() for k in HONEY_KEYWORDS)
+    return category, difficulty, prize, is_honey
+
+
+def add_event(title, link, source):
+    """중복 및 유효성 검사 후 리스트에 추가"""
+    title = re.sub(r'\s+', ' ', title).strip()
+    if len(title) < 5 or link in seen_links:
+        return
+    if is_expired_title(title):
+        return
+
+    seen_links.add(link)
+    category, difficulty, prize, is_honey = classify_event(title)
+    end_date = extract_end_date(title)
+
+    events.append({
+        "id": make_id(link),
+        "title": title,
+        "source": source,
+        "category": category,
+        "difficulty": difficulty,
+        "prize": prize,
+        "isHoney": is_honey,
+        "endDate": end_date,
+        "url": link,
+        "createdAt": datetime.now().strftime("%Y-%m-%d %H:%M")
+    })
+
+
+def fetch_ppomppu():
+    """1. 뽐뿌 쿠폰/이벤트 게시판 수집"""
+    urls = [
+        "https://www.ppomppu.co.kr/zboard/zboard.php?id=coupon",
+        "https://www.ppomppu.co.kr/zboard/zboard.php?id=event"
+    ]
+    for url in urls:
+        try:
+            res = requests.get(url, headers={**headers, 'Referer': 'https://www.ppomppu.co.kr/'}, timeout=10)
+            res.encoding = 'cp949'
+            soup = BeautifulSoup(res.text, 'html.parser')
+            posts = soup.select('tr.baseList, tr.list0, tr.list1')
+
+            for post in posts:
+                # 취소선(종료된 글) 제외
+                if post.select_one('del, s, strike'):
+                    continue
+                # 등록일 확인: 과거 연도(예: 20/07/30) 게시글 제외, 오늘(시:분:초) 또는 올해(26/..) 글만 허용
+                date_text = post.get_text()
+                if re.search(r'\b(1\d|2[0-5])/\d{2}/\d{2}\b', date_text):
+                    continue
+
+                title_tag = post.select_one('a.baseList-title, td.list_title a, a.list_title')
+                if not title_tag:
+                    continue
+                title = title_tag.get_text(strip=True)
+                href = title_tag.get('href', '')
+                if not href or href.startswith('javascript'):
+                    continue
+
+                link = urljoin(url, href)
+                add_event(title, link, "뽐뿌")
+        except Exception as e:
+            print(f"❌ 뽐뿌 수집 오류: {e}")
+
+
+def fetch_ruliweb():
+    """2. 루리웹 핫딜/이벤트 게시판 수집"""
+    url = "https://bbs.ruliweb.com/market/board/1020"
     try:
         res = requests.get(url, headers=headers, timeout=10)
-        res.encoding = 'cp949'
         soup = BeautifulSoup(res.text, 'html.parser')
-        
-        # 개편된 뽐뿌 클래스(tr.baseList)와 기존 클래스 모두 탐색
-        posts = soup.select('tr.baseList, tr.list0, tr.list1')
-        print(f"🔍 게시글 {len(posts)}개 발견, 분석 중...")
-        
-        for idx, post in enumerate(posts):
-            title_tag = post.select_one('a.baseList-title, td.list_title a, a.list_title')
+        posts = soup.select('tr.table_body')
+
+        for post in posts:
+            if 'notice' in post.get('class', []):
+                continue
+            title_tag = post.select_one('a.deco, a.subject_link')
             if not title_tag:
                 continue
-                
             title = title_tag.get_text(strip=True)
-            
-            # 공지사항이나 짧은 글 제외
-            if len(title) < 4 or "공지" in title:
-                continue
-                
-            href = title_tag.get('href', '')
-            if not href or href.startswith('javascript'):
-                continue
-                
-            # 상대 경로와 절대 경로를 안전하게 결합
-            link = urljoin(url, href)
-            
-            # 카테고리 자동 태깅
-            category = "기업/금융"
-            if any(k in title for k in ["공공", "시청", "구청", "부", "공사", "재단", "정부", "지자체"]):
-                category = "공공/정책"
-            elif any(k in title for k in ["쿠폰", "할인", "마트", "편의점", "쇼핑", "배민", "요기요"]):
-                category = "쇼핑/생활"
-
-            # 난이도 자동 추론
-            difficulty = "하"
-            if any(k in title for k in ["퀴즈", "출석", "룰렛", "클릭"]):
-                difficulty = "하"
-            elif any(k in title for k in ["서포터즈", "공모전", "영상", "글짓기"]):
-                difficulty = "상"
-            elif any(k in title for k in ["인스타", "팔로우", "소문내기", "공유"]):
-                difficulty = "중"
-
-            events.append({
-                "id": f"evt_{int(datetime.now().timestamp())}_{idx}",
-                "title": title,
-                "category": category,
-                "type": "응모",
-                "organizer": "자동수집",
-                "prize": "게시물 참고",
-                "endDate": datetime.now().strftime("%Y-%m-%d"),
-                "difficulty": difficulty,
-                "url": link,
-                "views": 100 + (idx * 15),
-                "completed": False,
-                "favorite": False,
-                "createdAt": datetime.now().strftime("%Y-%m-%d")
-            })
-            
+            link = title_tag.get('href', '').split('?')[0]
+            if link:
+                add_event(title, link, "루리웹")
     except Exception as e:
-        print(f"❌ 수집 오류 발생: {e}")
+        print(f"❌ 루리웹 수집 오류: {e}")
+
+
+def fetch_clien():
+    """3. 클리앙 알뜰구매/이벤트 게시판 수집"""
+    url = "https://www.clien.net/service/board/jirum"
+    try:
+        res = requests.get(url, headers=headers, timeout=10)
+        soup = BeautifulSoup(res.text, 'html.parser')
+        posts = soup.select('div.list_item.symph_row')
+
+        for post in posts:
+            # 품절/종료 표시 글 제외
+            if post.select_one('span.icon_info'):
+                info_txt = post.select_one('span.icon_info').get_text(strip=True)
+                if info_txt in ["품절", "종료"]:
+                    continue
+
+            title_tag = post.select_one('span.list_subject a, a.list_subject')
+            if not title_tag:
+                continue
+            title = title_tag.get_text(strip=True)
+            href = title_tag.get('href', '')
+            if href:
+                link = urljoin("https://www.clien.net", href.split('?')[0])
+                add_event(title, link, "클리앙")
+    except Exception as e:
+        print(f"❌ 클리앙 수집 오류: {e}")
+
+
+def fetch_coolenjoy():
+    """4. 쿨엔조이 지름/알뜰정보 수집"""
+    url = "https://coolenjoy.net/bbs/jirum"
+    try:
+        res = requests.get(url, headers=headers, timeout=10)
+        soup = BeautifulSoup(res.text, 'html.parser')
+        posts = soup.select('td.td_subject a')
+
+        for title_tag in posts:
+            title = title_tag.get_text(strip=True)
+            href = title_tag.get('href', '')
+            if href and 'jirum/' in href:
+                add_event(title, href, "쿨엔조이")
+    except Exception as e:
+        print(f"❌ 쿨엔조이 수집 오류: {e}")
+
+
+def fetch_brand_news_rss():
+    """5. 실시간 기업/프랜차이즈 경품·기프티콘 이벤트 수집 (구글 뉴스 RSS)"""
+     rss_url = "https://news.google.com/rss/search?q=%EC%9D%B4%EB%B2%A4%ED%8A%B8+(%EA%B8%B0%ED%94%84%ED%8B%B0%EC%BD%98+OR+%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4+OR+%EC%B6%94%EC%B2%A8+OR+%EC%84%A0%EC%B0%A9%EC%88%9C)+when:3d&hl=ko&gl=KR&ceid=KR:ko"
+    try:
+        res = requests.get(rss_url, headers=headers, timeout=10)
+        root = ET.fromstring(res.content)
+        for item in root.findall('.//item')[:25]:
+            title = item.findtext('title', '')
+            link = item.findtext('link', '')
+            # 뉴스 제목 뒤 언론사명 제거
+            title = re.sub(r'\s*-\s*[^-]+$', '', title)
+            if title and link:
+                add_event(title, link, "브랜드/뉴스")
+    except Exception as e:
+        print(f"❌ 브랜드 이벤트 RSS 수집 오류: {e}")
+
 
 if __name__ == "__main__":
-    print("🚀 실시간 이벤트 자동 크롤러 시작...")
-    fetch_ppomppu_events()
-    
-    # 결과를 events.json 파일로 저장
+    print("🚀 멀티 사이트 이벤트 크롤러 시작...")
+    fetch_ppomppu()
+    fetch_ruliweb()
+    fetch_clien()
+    fetch_coolenjoy()
+    fetch_brand_news_rss()
+
+    # 🍯 알짜 이벤트를 상단에 우선 배치
+    events.sort(key=lambda x: (not x.get("isHoney", False)))
+
     with open('events.json', 'w', encoding='utf-8') as f:
         json.dump(events, f, ensure_ascii=False, indent=2)
-        
-    print(f"✅ 총 {len(events)}개 이벤트 수집 완료!")
+
+    print(f"✅ 총 {len(events)}개 최신 이벤트 수집 완료!")
