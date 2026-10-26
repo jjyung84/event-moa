@@ -14,7 +14,8 @@ headers = {
     'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
 }
 
-EXCLUDE_KEYWORDS = ["종료", "마감", "품절", "완료", "당첨자", "발표", "공지", "규정", "질문", "후기"]
+# 차단할 키워드 (종료된 글 완벽 차단)
+EXCLUDE_KEYWORDS = ["종료", "마감", "품절", "완료", "당첨자", "발표", "공지", "규정", "질문", "후기", "삭제"]
 HONEY_KEYWORDS = [
     "기프티콘", "스타벅스", "스벅", "편의점", "CU", "GS25", "세븐일레븐",
     "100%", "전원", "무료", "출석", "퀴즈", "선착순", "네이버페이", "네페",
@@ -24,20 +25,20 @@ HONEY_KEYWORDS = [
 def make_id(url):
     return "evt_" + hashlib.md5(url.encode('utf-8')).hexdigest()[:10]
 
-def is_expired_title(title):
-    if any(k in title for k in EXCLUDE_KEYWORDS):
+def is_expired_post(title, text_content=""):
+    """제목 및 본문에 종료 키워드가 있거나 과거 연도(20~25년) 글인 경우 차단"""
+    combined = title + " " + text_content
+    if any(k in combined for k in EXCLUDE_KEYWORDS):
         return True
-    now = datetime.now()
-    match = re.search(r'~\s*(\d{1,2})[./월]\s*(\d{1,2})', title)
-    if match:
-        month, day = int(match.group(1)), int(match.group(2))
-        if 1 <= month <= 12 and 1 <= day <= 31:
-            try:
-                end_dt = datetime(now.year, month, day, 23, 59, 59)
-                if end_dt < now and not (now.month == 12 and month <= 2):
-                    return True
-            except ValueError:
-                pass
+    if "[종료" in combined or "(종료" in combined or "종료됨" in combined:
+        return True
+    
+    # 2020~2025년 등 과거 연도 표기가 포함된 경우 차단
+    if re.search(r'20[2-5][0-9][./-]\s*\d{1,2}[./-]\s*\d{1,2}', combined):
+        return True
+    if re.search(r'\b(20)?(20|21|22|23|24|25)[./-]\d{1,2}[./-]\d{1,2}\b', combined):
+        return True
+
     return False
 
 def extract_end_date(title):
@@ -76,12 +77,12 @@ def classify_event(title):
     is_honey = any(k.lower() in title.lower() for k in HONEY_KEYWORDS)
     return category, difficulty, prize, is_honey
 
-def add_event(title, link, source):
+def add_event(title, link, source, text_content=""):
     try:
         title = re.sub(r'\s+', ' ', title).strip()
         if len(title) < 5 or link in seen_links:
             return
-        if is_expired_title(title):
+        if is_expired_post(title, text_content):
             return
 
         seen_links.add(link)
@@ -115,8 +116,14 @@ def fetch_ppomppu():
             soup = BeautifulSoup(res.text, 'html.parser')
             posts = soup.select('tr.baseList, tr.list0, tr.list1')
             for post in posts:
+                # 취소선이나 마감 아이콘이 있는 경우 제외
                 if post.select_one('del, s, strike'):
                     continue
+                row_text = post.get_text()
+                # 목록에 2020~2025년 날짜가 포함된 경우 패스
+                if re.search(r'\b(20)?(20|21|22|23|24|25)[./-]', row_text):
+                    continue
+                
                 title_tag = post.select_one('a.baseList-title, td.list_title a, a.list_title')
                 if not title_tag:
                     continue
@@ -125,7 +132,7 @@ def fetch_ppomppu():
                 if not href or href.startswith('javascript'):
                     continue
                 link = urljoin(url, href)
-                add_event(title, link, "뽐뿌")
+                add_event(title, link, "뽐뿌", row_text)
         except Exception as e:
             print(f"⚠️ 뽐뿌 수집 중 예외 발생: {e}")
 
@@ -138,13 +145,16 @@ def fetch_ruliweb():
         for post in posts:
             if 'notice' in post.get('class', []):
                 continue
+            row_text = post.get_text()
+            if "종료" in row_text or "마감" in row_text:
+                continue
             title_tag = post.select_one('a.deco, a.subject_link')
             if not title_tag:
                 continue
             title = title_tag.get_text(strip=True)
             link = title_tag.get('href', '').split('?')[0]
             if link:
-                add_event(title, link, "루리웹")
+                add_event(title, link, "루리웹", row_text)
     except Exception as e:
         print(f"⚠️ 루리웹 수집 중 예외 발생: {e}")
 
@@ -155,6 +165,7 @@ def fetch_clien():
         soup = BeautifulSoup(res.text, 'html.parser')
         posts = soup.select('div.list_item.symph_row')
         for post in posts:
+            row_text = post.get_text()
             if post.select_one('span.icon_info'):
                 info_txt = post.select_one('span.icon_info').get_text(strip=True)
                 if info_txt in ["품절", "종료"]:
@@ -166,7 +177,7 @@ def fetch_clien():
             href = title_tag.get('href', '')
             if href:
                 link = urljoin("https://www.clien.net", href.split('?')[0])
-                add_event(title, link, "클리앙")
+                add_event(title, link, "클리앙", row_text)
     except Exception as e:
         print(f"⚠️ 클리앙 수집 중 예외 발생: {e}")
 
@@ -178,14 +189,15 @@ def fetch_coolenjoy():
         posts = soup.select('td.td_subject a')
         for title_tag in posts:
             title = title_tag.get_text(strip=True)
+            row_text = title_tag.parent.get_text() if title_tag.parent else ""
             href = title_tag.get('href', '')
             if href and 'jirum/' in href:
-                add_event(title, href, "쿨엔조이")
+                add_event(title, href, "쿨엔조이", row_text)
     except Exception as e:
         print(f"⚠️ 쿨엔조이 수집 중 예외 발생: {e}")
 
 if __name__ == "__main__":
-    print("🚀 멀티 사이트 이벤트 안전 크롤러 시작...")
+    print("🚀 멀티 사이트 스마트 필터 크롤러 시작...")
     fetch_ppomppu()
     fetch_ruliweb()
     fetch_clien()
@@ -196,4 +208,4 @@ if __name__ == "__main__":
     with open('events.json', 'w', encoding='utf-8') as f:
         json.dump(events, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ 총 {len(events)}개 이벤트 수집 및 저장 완료!")
+    print(f"✅ 총 {len(events)}개 유효 이벤트 수집 및 저장 완료!")
