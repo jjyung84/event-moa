@@ -14,39 +14,48 @@ headers = {
     'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
 }
 
-# 차단할 키워드 (1원 적립, 단순 출석, 단순 퀴즈 등 푼돈 이벤트 철저 차단)
+# 🚫 푼돈, 출첵, 퀴즈, 앱테크 관련 차단 단어 대폭 강화
 EXCLUDE_KEYWORDS = [
     "종료", "마감", "품절", "완료", "당첨자", "발표", "공지", "규정", "질문", "후기", "삭제",
-    "1원", "출석체크", "출첵", "룰렛", "티몬", "토스", "랜덤박스", "앱테크", "포인트적립"
+    "원", "포인트", "포", "출석", "출첵", "퀴즈", "정답", "룰렛", "티몬", "토스", 
+    "랜덤박스", "앱테크", "적립", "알림받기", "체크", "출석체크", "소소", "팔로우"
 ]
 
-# 🍯 경품·상품권 중심의 알짜 핵심 키워드 (이 중 하나라도 포함되어야 수집)
+# 🍯 진짜 경품/상품권/기프티콘을 주는 핵심 키워드 (필수 포함)
 PRIZE_KEYWORDS = [
     "상품권", "기프티콘", "스타벅스", "스벅", "네이버페이", "네페", "신세계", "백화점", 
     "치킨", "피자", "버거", "커피", "아메리카노", "배달의민족", "배민", "요기요", 
     "올리브영", "문화상품권", "문상", "해피머니", "주유권", "경품", "추첨", "선착순", 
-    "전원", "100%", "응모", "공모전", "체험단", "무료증정", "증정", "갤럭시", "아이폰"
+    "전원", "100%", "응모", "공모전", "체험단", "무료증정", "증정", "갤럭시", "아이폰", "햄버거"
 ]
 
 def make_id(url):
     return "evt_" + hashlib.md5(url.encode('utf-8')).hexdigest()[:10]
 
 def is_valid_prize_event(title, text_content=""):
-    """푼돈 적립/출첵은 거르고, 확실한 경품/상품권 이벤트만 통과시킴"""
     combined = title + " " + text_content
     
-    # 1. 제외 키워드(종료, 1원, 출첵 등)가 포함된 경우 즉시 차단
-    if any(k in combined for k in EXCLUDE_KEYWORDS):
-        return False
-    if "[종료" in combined or "(종료" in combined or "종료됨" in combined:
+    # 1. 푼돈/퀴즈/종료 키워드가 하나라도 포함되면 무조건 차단
+    for kw in EXCLUDE_KEYWORDS:
+        # 단, '네이버페이'나 '상품권' 등에 포함된 글자는 예외 처리하기 위해 정확한 단어/패턴 검사
+        if kw in title:
+            # 예외: '네이버페이'에 '원'이 들어가도 페이 금액(예: 5000원 등 큰 금액)은 허용할 수 있도록 소액(숫자+원/포) 패턴 차단
+            if kw == "원" and re.search(r'\d{1,3}원', title): 
+                return False
+            if kw == "포" and re.search(r'\d{1,4}포', title): 
+                return False
+            if kw in ["원", "포", "포인트", "적립", "퀴즈", "정답", "출석", "출첵", "룰렛", "알림받기"]:
+                return False
+
+    if any(k in combined for k in ["종료됨", "[종료", "(종료"]):
         return False
     
-    # 2. 과거 연도(20~25년) 글 차단
+    # 2. 과거 연도 글 차단
     if re.search(r'\b(20)?(20|21|22|23|24|25)[./-]', combined):
         return False
 
-    # 3. 경품/상품권 핵심 키워드가 최소 1개 이상 포함되어야만 인정
-    has_prize = any(k in combined for k in PRIZE_KEYWORDS)
+    # 3. 확실한 경품/상품권 키워드가 포함되어야만 통과
+    has_prize = any(k in title for k in PRIZE_KEYWORDS)
     return has_prize
 
 def extract_end_date(title):
@@ -61,7 +70,7 @@ def extract_end_date(title):
 
 def classify_event(title):
     category = "기업/금융"
-    if any(k in title for k in ["치킨", "커피", "피자", "버거", "스타벅스", "스벅", "투썸", "메가커피", "배민", "요기요", "식당", "음료"]):
+    if any(k in title for k in ["치킨", "커피", "피자", "버거", "스타벅스", "스벅", "투썸", "메가커피", "배민", "요기요", "식당", "음료", "햄버거"]):
         category = "식음료/외식"
     elif any(k in title for k in ["쿠폰", "할인", "마트", "편의점", "쇼핑", "네이버페이", "네페", "무신사", "올리브영", "신세계", "상품권"]):
         category = "쇼핑/상품권"
@@ -82,7 +91,6 @@ def classify_event(title):
             prize = p
             break
 
-    # 상품권이나 확정 경품이 제목에 명시된 경우 무조건 '알짜'로 판별
     is_honey = True 
     return category, difficulty, prize, is_honey
 
@@ -195,7 +203,7 @@ def fetch_coolenjoy():
         print(f"⚠️ 쿨엔조이 수집 중 예외 발생: {e}")
 
 if __name__ == "__main__":
-    print("🚀 경품·상품권 집중형 스마트 크롤러 시작...")
+    print("🚀 고품질 경품/상품권 전용 크롤러 시작...")
     fetch_ppomppu()
     fetch_ruliweb()
     fetch_clien()
@@ -206,4 +214,4 @@ if __name__ == "__main__":
     with open('events.json', 'w', encoding='utf-8') as f:
         json.dump(events, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ 총 {len(events)}개 알짜 경품/상품권 이벤트 수집 완료!")
+    print(f"✅ 총 {len(events)}개 알짜 경품 이벤트 수집 완료!")
