@@ -9,7 +9,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120051",
-    "createdAt": "2026-10-27 03:25"
+    "createdAt": "2026-10-27 09:17"
   },
   {
     "id": "evt_30a55e69f5",
@@ -21,11 +21,11 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120041",
-    "createdAt": "2026-10-27 03:25"
+    "createdAt": "2026-10-27 09:17"
   },
   {
     "id": "evt_cff82649eb",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 1차 (10...(2)",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 1차 (10...(9)",
     "source": "루리웹",
     "category": "식음료/외식",
     "difficulty": "하",
@@ -33,31 +33,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108379",
-    "createdAt": "2026-10-27 03:25"
-  },
-  {
-    "id": "evt_53a91dab92",
-    "title": "[네이버쇼핑] 메가커피 2차 아메리카노 22%+멤버십 추가 할인 (10/...(24)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "커피",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108356",
-    "createdAt": "2026-10-27 03:25"
-  },
-  {
-    "id": "evt_035edebce6",
-    "title": "[네이버페이]마이카방문 3종추가(5)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108354",
-    "createdAt": "2026-10-27 03:25"
+    "createdAt": "2026-10-27 09:17"
   },
   {
     "id": "evt_b8d0808c16",
@@ -69,6 +45,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.clien.net/service/board/jirum/19280732",
-    "createdAt": "2026-10-27 03:25"
+    "createdAt": "2026-10-27 09:17"
   }
 ]
