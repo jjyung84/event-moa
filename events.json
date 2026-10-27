@@ -1,15 +1,27 @@
 [
   {
-    "id": "evt_58e499a300",
-    "title": "[네이버페이]삼성전자, 제주항공 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
+    "id": "evt_108e7053d3",
+    "title": "[네이버페이]호텔나루, 삼성전자 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
     "source": "뽐뿌",
     "category": "쇼핑/상품권",
     "difficulty": "하",
     "prize": "네이버페이",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120051",
-    "createdAt": "2026-10-27 21:25"
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120083",
+    "createdAt": "2026-10-28 03:27"
+  },
+  {
+    "id": "evt_7a3380eca1",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 1차 (10...(1)",
+    "source": "루리웹",
+    "category": "식음료/외식",
+    "difficulty": "하",
+    "prize": "커피",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108413",
+    "createdAt": "2026-10-28 03:27"
   },
   {
     "id": "evt_cc695e2c21",
@@ -21,19 +33,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108399",
-    "createdAt": "2026-10-27 21:25"
-  },
-  {
-    "id": "evt_5dda2b3530",
-    "title": "[네이버쇼핑] 넾다세일 낮12시 20% 선착순 할인 쿠폰 (10/27)(56)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108396",
-    "createdAt": "2026-10-27 21:25"
+    "createdAt": "2026-10-28 03:27"
   },
   {
     "id": "evt_3fe9198bc1",
@@ -45,7 +45,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108392",
-    "createdAt": "2026-10-27 21:25"
+    "createdAt": "2026-10-28 03:27"
   },
   {
     "id": "evt_b8d0808c16",
@@ -57,6 +57,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.clien.net/service/board/jirum/19280732",
-    "createdAt": "2026-10-27 21:25"
+    "createdAt": "2026-10-28 03:27"
   }
 ]
