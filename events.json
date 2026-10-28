@@ -1,7 +1,7 @@
 [
   {
     "id": "evt_12e51dc3e6",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (10...(10)",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (10...(13)",
     "source": "루리웹",
     "category": "식음료/외식",
     "difficulty": "하",
@@ -9,19 +9,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108432",
-    "createdAt": "2026-10-28 15:27"
-  },
-  {
-    "id": "evt_cbf976621d",
-    "title": "[네이버쇼핑] 넾다세일 낮12시 20% 선착순 할인 쿠폰 (10/28)(55)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108425",
-    "createdAt": "2026-10-28 15:27"
+    "createdAt": "2026-10-28 21:28"
   },
   {
     "id": "evt_3e6c0dc287",
@@ -33,7 +21,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108427",
-    "createdAt": "2026-10-28 15:27"
+    "createdAt": "2026-10-28 21:28"
   },
   {
     "id": "evt_b8d0808c16",
@@ -45,6 +33,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.clien.net/service/board/jirum/19280732",
-    "createdAt": "2026-10-28 15:27"
+    "createdAt": "2026-10-28 21:28"
   }
 ]
