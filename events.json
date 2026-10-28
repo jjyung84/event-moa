@@ -1,19 +1,19 @@
 [
   {
-    "id": "evt_108e7053d3",
-    "title": "[네이버페이]호텔나루, 삼성전자 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
+    "id": "evt_12e51dc3e6",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (10...(10)",
+    "source": "루리웹",
+    "category": "식음료/외식",
     "difficulty": "하",
-    "prize": "네이버페이",
+    "prize": "커피",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120083",
-    "createdAt": "2026-10-28 09:22"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108432",
+    "createdAt": "2026-10-28 15:27"
   },
   {
     "id": "evt_cbf976621d",
-    "title": "[네이버쇼핑] 넾다세일 낮12시 20% 선착순 할인 쿠폰 (10/28)(6)",
+    "title": "[네이버쇼핑] 넾다세일 낮12시 20% 선착순 할인 쿠폰 (10/28)(55)",
     "source": "루리웹",
     "category": "쇼핑/상품권",
     "difficulty": "하",
@@ -21,31 +21,19 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108425",
-    "createdAt": "2026-10-28 09:22"
+    "createdAt": "2026-10-28 15:27"
   },
   {
-    "id": "evt_7a3380eca1",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 1차 (10...(3)",
+    "id": "evt_3e6c0dc287",
+    "title": "[네이버/4차] 아이폰 듀오 256GB ㅅ나이트 스카이 3,290,000...(17)",
     "source": "루리웹",
-    "category": "식음료/외식",
+    "category": "IT/기기",
     "difficulty": "하",
-    "prize": "커피",
+    "prize": "경품/상품권",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108413",
-    "createdAt": "2026-10-28 09:22"
-  },
-  {
-    "id": "evt_cc695e2c21",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (10...(8)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "커피",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108399",
-    "createdAt": "2026-10-28 09:22"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108427",
+    "createdAt": "2026-10-28 15:27"
   },
   {
     "id": "evt_b8d0808c16",
@@ -57,6 +45,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.clien.net/service/board/jirum/19280732",
-    "createdAt": "2026-10-28 09:22"
+    "createdAt": "2026-10-28 15:27"
   }
 ]
