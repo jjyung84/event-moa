@@ -1,27 +1,39 @@
 [
   {
-    "id": "evt_12e51dc3e6",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (10...(13)",
+    "id": "evt_e691126273",
+    "title": "[네이버페이]밴루엔, 삼성전자 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
+    "source": "뽐뿌",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "네이버페이",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120120",
+    "createdAt": "2026-10-29 03:28"
+  },
+  {
+    "id": "evt_eb4c50ed2c",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 1차 (10...(6)",
     "source": "루리웹",
     "category": "식음료/외식",
     "difficulty": "하",
     "prize": "커피",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108432",
-    "createdAt": "2026-10-28 21:28"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108455",
+    "createdAt": "2026-10-29 03:28"
   },
   {
-    "id": "evt_3e6c0dc287",
-    "title": "[네이버/4차] 아이폰 듀오 256GB ㅅ나이트 스카이 3,290,000...(17)",
+    "id": "evt_e33a642545",
+    "title": "[네이버쇼핑] 메가커피 음료 신메뉴 24%&분식 신메뉴 22% 할인(10...",
     "source": "루리웹",
-    "category": "IT/기기",
+    "category": "식음료/외식",
     "difficulty": "하",
-    "prize": "경품/상품권",
+    "prize": "커피",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108427",
-    "createdAt": "2026-10-28 21:28"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108457",
+    "createdAt": "2026-10-29 03:28"
   },
   {
     "id": "evt_b8d0808c16",
@@ -33,6 +45,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.clien.net/service/board/jirum/19280732",
-    "createdAt": "2026-10-28 21:28"
+    "createdAt": "2026-10-29 03:28"
   }
 ]
