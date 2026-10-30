@@ -1,15 +1,15 @@
 [
   {
-    "id": "evt_051c5f90e7",
-    "title": "[네이버페이]사조대림 삼성전자 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
+    "id": "evt_0c38a468a6",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (10...(1)",
+    "source": "루리웹",
+    "category": "식음료/외식",
     "difficulty": "하",
-    "prize": "네이버페이",
+    "prize": "커피",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120153",
-    "createdAt": "2026-10-30 09:25"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108510",
+    "createdAt": "2026-10-30 15:29"
   },
   {
     "id": "evt_19f30bf01e",
@@ -21,30 +21,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108489",
-    "createdAt": "2026-10-30 09:25"
-  },
-  {
-    "id": "evt_59a734816f",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (10...(5)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "커피",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108476",
-    "createdAt": "2026-10-30 09:25"
-  },
-  {
-    "id": "evt_b8d0808c16",
-    "title": "[갤럭시스토어] 호작도 갤럭시 테마 무료",
-    "source": "클리앙",
-    "category": "IT/기기",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.clien.net/service/board/jirum/19280732",
-    "createdAt": "2026-10-30 09:25"
+    "createdAt": "2026-10-30 15:29"
   }
 ]
