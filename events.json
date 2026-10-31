@@ -1,17 +1,5 @@
 [
   {
-    "id": "evt_5aadc026f4",
-    "title": "[유쁠 선착순 50명] 지금 등록하면 메가카피 아메리카노 쿠폰 놓치면 끝!",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "아메리카노",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120221",
-    "createdAt": "2026-10-31 15:28"
-  },
-  {
     "id": "evt_b39c56ec8a",
     "title": "[네이버페이]사조대림, 삼성전자 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
     "source": "뽐뿌",
@@ -21,11 +9,11 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120195",
-    "createdAt": "2026-10-31 15:28"
+    "createdAt": "2026-10-31 21:26"
   },
   {
     "id": "evt_73a22b52ca",
-    "title": "[네이버페이] 11월 주요 현장결제 이벤트 (11/1~30)(7)",
+    "title": "[네이버페이] 11월 주요 현장결제 이벤트 (11/1~30)(9)",
     "source": "루리웹",
     "category": "쇼핑/상품권",
     "difficulty": "하",
@@ -33,23 +21,11 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108544",
-    "createdAt": "2026-10-31 15:28"
-  },
-  {
-    "id": "evt_77edc83bbd",
-    "title": "[네이버쇼핑] 넾다세일 낮12시 20% 선착순 할인 쿠폰 (10/31)(29)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108538",
-    "createdAt": "2026-10-31 15:28"
+    "createdAt": "2026-10-31 21:26"
   },
   {
     "id": "evt_3a15cbaa8f",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (10...(3)",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (10...(4)",
     "source": "루리웹",
     "category": "식음료/외식",
     "difficulty": "하",
@@ -57,7 +33,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108541",
-    "createdAt": "2026-10-31 15:28"
+    "createdAt": "2026-10-31 21:26"
   },
   {
     "id": "evt_426dfbc955",
@@ -69,6 +45,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108527",
-    "createdAt": "2026-10-31 15:28"
+    "createdAt": "2026-10-31 21:26"
   }
 ]
