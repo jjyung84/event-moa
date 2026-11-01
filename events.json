@@ -9,7 +9,19 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120225",
-    "createdAt": "2026-11-01 03:24"
+    "createdAt": "2026-11-01 09:27"
+  },
+  {
+    "id": "evt_c416d204d5",
+    "title": "[네이버쇼핑] 넾다세일 낮12시 20% 선착순 할인 쿠폰 (11/1)",
+    "source": "루리웹",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "경품/상품권",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108565",
+    "createdAt": "2026-11-01 09:27"
   },
   {
     "id": "evt_d7a6597788",
@@ -21,7 +33,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108553",
-    "createdAt": "2026-11-01 03:24"
+    "createdAt": "2026-11-01 09:27"
   },
   {
     "id": "evt_73a22b52ca",
@@ -33,7 +45,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108544",
-    "createdAt": "2026-11-01 03:24"
+    "createdAt": "2026-11-01 09:27"
   },
   {
     "id": "evt_3a15cbaa8f",
@@ -45,6 +57,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108541",
-    "createdAt": "2026-11-01 03:24"
+    "createdAt": "2026-11-01 09:27"
   }
 ]
