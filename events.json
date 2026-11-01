@@ -1,15 +1,51 @@
 [
   {
-    "id": "evt_21c4878591",
-    "title": "(선착순)빼빼로 무료 - 선택만하면 바로지급 - 토스 페이스페이",
+    "id": "evt_1a98b96311",
+    "title": "[네이버페이]사조대림, 삼성전자 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
     "source": "뽐뿌",
-    "category": "기업/금융",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "네이버페이",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120267",
+    "createdAt": "2026-11-02 03:24"
+  },
+  {
+    "id": "evt_c671df23e1",
+    "title": "[네이버쇼핑] 네이버멤버십 선착순쿠폰(3)",
+    "source": "루리웹",
+    "category": "쇼핑/상품권",
     "difficulty": "하",
     "prize": "경품/상품권",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120254",
-    "createdAt": "2026-11-01 21:27"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108581",
+    "createdAt": "2026-11-02 03:24"
+  },
+  {
+    "id": "evt_bfad13c086",
+    "title": "[지마켓] 노브랜드버거 금액권 20~21% 할인 (11/2)(10)",
+    "source": "루리웹",
+    "category": "식음료/외식",
+    "difficulty": "하",
+    "prize": "경품/상품권",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108584",
+    "createdAt": "2026-11-02 03:24"
+  },
+  {
+    "id": "evt_311973053f",
+    "title": "[네이버쇼핑]네이버페이 카페이벤트 종료/메가커피22%+멤버십 추가 할인(...(4)",
+    "source": "루리웹",
+    "category": "식음료/외식",
+    "difficulty": "하",
+    "prize": "네이버페이",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108577",
+    "createdAt": "2026-11-02 03:24"
   },
   {
     "id": "evt_5ae1392dcb",
@@ -21,30 +57,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108568",
-    "createdAt": "2026-11-01 21:27"
-  },
-  {
-    "id": "evt_c416d204d5",
-    "title": "[네이버쇼핑] 넾다세일 낮12시 20% 선착순 할인 쿠폰 (11/1)(41)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108565",
-    "createdAt": "2026-11-01 21:27"
-  },
-  {
-    "id": "evt_d7a6597788",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 1차 (11...(2)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "커피",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108553",
-    "createdAt": "2026-11-01 21:27"
+    "createdAt": "2026-11-02 03:24"
   }
 ]
