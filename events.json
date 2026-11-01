@@ -9,11 +9,11 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120254",
-    "createdAt": "2026-11-01 15:33"
+    "createdAt": "2026-11-01 21:27"
   },
   {
     "id": "evt_5ae1392dcb",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (11...(3)",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (11...(4)",
     "source": "루리웹",
     "category": "식음료/외식",
     "difficulty": "하",
@@ -21,11 +21,11 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108568",
-    "createdAt": "2026-11-01 15:33"
+    "createdAt": "2026-11-01 21:27"
   },
   {
     "id": "evt_c416d204d5",
-    "title": "[네이버쇼핑] 넾다세일 낮12시 20% 선착순 할인 쿠폰 (11/1)(40)",
+    "title": "[네이버쇼핑] 넾다세일 낮12시 20% 선착순 할인 쿠폰 (11/1)(41)",
     "source": "루리웹",
     "category": "쇼핑/상품권",
     "difficulty": "하",
@@ -33,7 +33,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108565",
-    "createdAt": "2026-11-01 15:33"
+    "createdAt": "2026-11-01 21:27"
   },
   {
     "id": "evt_d7a6597788",
@@ -45,30 +45,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108553",
-    "createdAt": "2026-11-01 15:33"
-  },
-  {
-    "id": "evt_73a22b52ca",
-    "title": "[네이버페이] 11월 주요 현장결제 이벤트 (11/1~30)(11)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108544",
-    "createdAt": "2026-11-01 15:33"
-  },
-  {
-    "id": "evt_3a15cbaa8f",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (10...(4)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "커피",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108541",
-    "createdAt": "2026-11-01 15:33"
+    "createdAt": "2026-11-01 21:27"
   }
 ]
