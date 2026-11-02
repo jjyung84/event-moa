@@ -1,62 +1,26 @@
 [
   {
-    "id": "evt_1a98b96311",
-    "title": "[네이버페이]사조대림, 삼성전자 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
+    "id": "evt_0a684cc4f5",
+    "title": "[네이버페이]쇼핑라이브 오후 일정 (15시 1개, 18시 4개, 19시 5개, 20시 3개)",
     "source": "뽐뿌",
     "category": "쇼핑/상품권",
     "difficulty": "하",
     "prize": "네이버페이",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120267",
-    "createdAt": "2026-11-02 09:28"
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120307",
+    "createdAt": "2026-11-02 15:54"
   },
   {
-    "id": "evt_bfad13c086",
-    "title": "[지마켓] 노브랜드버거 금액권 20~21% 할인 (11/2)(12)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108584",
-    "createdAt": "2026-11-02 09:28"
-  },
-  {
-    "id": "evt_c671df23e1",
-    "title": "[네이버쇼핑] 네이버멤버십 선착순쿠폰(5)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "경품/상품권",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108581",
-    "createdAt": "2026-11-02 09:28"
-  },
-  {
-    "id": "evt_311973053f",
-    "title": "[네이버쇼핑]네이버페이 카페이벤트 종료/메가커피22%+멤버십 추가 할인(...(5)",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108577",
-    "createdAt": "2026-11-02 09:28"
-  },
-  {
-    "id": "evt_5ae1392dcb",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (11...(4)",
+    "id": "evt_b692542023",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (11...(1)",
     "source": "루리웹",
     "category": "식음료/외식",
     "difficulty": "하",
     "prize": "커피",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108568",
-    "createdAt": "2026-11-02 09:28"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108605",
+    "createdAt": "2026-11-02 15:54"
   }
 ]
