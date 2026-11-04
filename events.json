@@ -1,5 +1,17 @@
 [
   {
+    "id": "evt_d29360042d",
+    "title": "[네이버페이]쇼핑라이브 오후 일정 (14시 1개, 18시 2개, 19시 6개, 20시 4개)",
+    "source": "뽐뿌",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "네이버페이",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120379",
+    "createdAt": "2026-11-04 15:50"
+  },
+  {
     "id": "evt_d49d4f45f9",
     "title": "[네이버페이]사조대림, 삼성전자 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
     "source": "뽐뿌",
@@ -9,18 +21,18 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120348",
-    "createdAt": "2026-11-04 09:29"
+    "createdAt": "2026-11-04 15:50"
   },
   {
-    "id": "evt_8d81e0557e",
-    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 1차 (11...(1)",
+    "id": "evt_e229c06f46",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (11...(1)",
     "source": "루리웹",
     "category": "식음료/외식",
     "difficulty": "하",
     "prize": "커피",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108652",
-    "createdAt": "2026-11-04 09:29"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108674",
+    "createdAt": "2026-11-04 15:50"
   }
 ]
