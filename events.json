@@ -1,27 +1,15 @@
 [
   {
-    "id": "evt_d29360042d",
-    "title": "[네이버페이]쇼핑라이브 오후 일정 (14시 1개, 18시 2개, 19시 6개, 20시 4개)",
+    "id": "evt_cec6dd4f05",
+    "title": "[네이버페이]14시 브랜드 뽑기",
     "source": "뽐뿌",
     "category": "쇼핑/상품권",
     "difficulty": "하",
     "prize": "네이버페이",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120379",
-    "createdAt": "2026-11-04 15:50"
-  },
-  {
-    "id": "evt_d49d4f45f9",
-    "title": "[네이버페이]사조대림, 삼성전자 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120348",
-    "createdAt": "2026-11-04 15:50"
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120380",
+    "createdAt": "2026-11-04 21:41"
   },
   {
     "id": "evt_e229c06f46",
@@ -33,6 +21,18 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108674",
-    "createdAt": "2026-11-04 15:50"
+    "createdAt": "2026-11-04 21:41"
+  },
+  {
+    "id": "evt_3193dcb94b",
+    "title": "무료 나눔 메가커피 쿠폰",
+    "source": "클리앙",
+    "category": "식음료/외식",
+    "difficulty": "하",
+    "prize": "커피",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://www.clien.net/service/board/jirum/19287592",
+    "createdAt": "2026-11-04 21:41"
   }
 ]
