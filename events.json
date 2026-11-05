@@ -1,5 +1,29 @@
 [
   {
+    "id": "evt_3f03d6a40c",
+    "title": "[네이버페이]롯데카드, SK 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
+    "source": "뽐뿌",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "네이버페이",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120419",
+    "createdAt": "2026-11-06 03:37"
+  },
+  {
+    "id": "evt_4b4b7e7ae2",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 1차 (11...(1)",
+    "source": "루리웹",
+    "category": "식음료/외식",
+    "difficulty": "하",
+    "prize": "커피",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108744",
+    "createdAt": "2026-11-06 03:37"
+  },
+  {
     "id": "evt_e8dede7105",
     "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (11...(9)",
     "source": "루리웹",
@@ -9,6 +33,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108724",
-    "createdAt": "2026-11-05 21:47"
+    "createdAt": "2026-11-06 03:37"
   }
 ]
