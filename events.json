@@ -1,15 +1,27 @@
 [
   {
-    "id": "evt_cec6dd4f05",
-    "title": "[네이버페이]14시 브랜드 뽑기",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
+    "id": "evt_e8dede7105",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 2차 (11...(9)",
+    "source": "루리웹",
+    "category": "식음료/외식",
     "difficulty": "하",
-    "prize": "네이버페이",
+    "prize": "커피",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120380",
-    "createdAt": "2026-11-05 09:35"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108724",
+    "createdAt": "2026-11-05 15:52"
+  },
+  {
+    "id": "evt_932839ee9e",
+    "title": "[네이버쇼핑] 넾다세일 낮12시 20% 선착순 할인 쿠폰 (11/5)(26)",
+    "source": "루리웹",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "경품/상품권",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108720",
+    "createdAt": "2026-11-05 15:52"
   },
   {
     "id": "evt_39d8360340",
@@ -21,7 +33,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108701",
-    "createdAt": "2026-11-05 09:35"
+    "createdAt": "2026-11-05 15:52"
   },
   {
     "id": "evt_3193dcb94b",
@@ -33,6 +45,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.clien.net/service/board/jirum/19287592",
-    "createdAt": "2026-11-05 09:35"
+    "createdAt": "2026-11-05 15:52"
   }
 ]
