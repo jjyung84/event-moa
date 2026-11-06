@@ -9,7 +9,19 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120447",
-    "createdAt": "2026-11-06 15:51"
+    "createdAt": "2026-11-06 21:44"
+  },
+  {
+    "id": "evt_d4e6c4be89",
+    "title": "[네이버페이] 마이카방문 4종 추가(7)",
+    "source": "루리웹",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "네이버페이",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108786",
+    "createdAt": "2026-11-06 21:44"
   },
   {
     "id": "evt_50405a07b7",
@@ -21,6 +33,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108769",
-    "createdAt": "2026-11-06 15:52"
+    "createdAt": "2026-11-06 21:44"
   }
 ]
