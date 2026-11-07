@@ -1,6 +1,6 @@
 [
   {
-    "id": "evt_9ed9a6a835",
+    "id": "evt_2406eb4a51",
     "title": "[네이버페이]롯데카드, SK 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
     "source": "뽐뿌",
     "category": "쇼핑/상품권",
@@ -8,8 +8,20 @@
     "prize": "네이버페이",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120456",
-    "createdAt": "2026-11-07 21:29"
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120497",
+    "createdAt": "2026-11-08 03:24"
+  },
+  {
+    "id": "evt_1c479d586a",
+    "title": "[네이버쇼핑] 메가커피 메뉴 22%+멤버십 10% 추가 할인 1차 (11...",
+    "source": "루리웹",
+    "category": "식음료/외식",
+    "difficulty": "하",
+    "prize": "커피",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108819",
+    "createdAt": "2026-11-08 03:24"
   },
   {
     "id": "evt_7885694f3c",
@@ -21,7 +33,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108805",
-    "createdAt": "2026-11-07 21:29"
+    "createdAt": "2026-11-08 03:24"
   },
   {
     "id": "evt_60e27d6b6d",
@@ -33,18 +45,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108792",
-    "createdAt": "2026-11-07 21:29"
-  },
-  {
-    "id": "evt_d4e6c4be89",
-    "title": "[네이버페이] 마이카방문 4종 추가(7)",
-    "source": "루리웹",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108786",
-    "createdAt": "2026-11-07 21:29"
+    "createdAt": "2026-11-08 03:24"
   }
 ]
