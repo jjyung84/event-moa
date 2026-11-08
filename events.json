@@ -1,6 +1,6 @@
 [
   {
-    "id": "evt_2406eb4a51",
+    "id": "evt_8013ff54d7",
     "title": "[네이버페이]롯데카드, SK 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
     "source": "뽐뿌",
     "category": "쇼핑/상품권",
@@ -8,8 +8,32 @@
     "prize": "네이버페이",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120497",
-    "createdAt": "2026-11-08 21:28"
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120532",
+    "createdAt": "2026-11-09 03:25"
+  },
+  {
+    "id": "evt_f1ecc4910c",
+    "title": "[던킨도너츠] 네이버페이 결제시 두바이 도넛 4종 50% 할인 (11/9...(10)",
+    "source": "루리웹",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "네이버페이",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108844",
+    "createdAt": "2026-11-09 03:25"
+  },
+  {
+    "id": "evt_758d3107f5",
+    "title": "[지마켓] 메가커피 메뉴 22%&금액권 11% 할인 (11/9~15)(1)",
+    "source": "루리웹",
+    "category": "식음료/외식",
+    "difficulty": "하",
+    "prize": "커피",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108840",
+    "createdAt": "2026-11-09 03:25"
   },
   {
     "id": "evt_f0ded74150",
@@ -21,7 +45,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108831",
-    "createdAt": "2026-11-08 21:28"
+    "createdAt": "2026-11-09 03:25"
   },
   {
     "id": "evt_1c479d586a",
@@ -33,6 +57,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108819",
-    "createdAt": "2026-11-08 21:28"
+    "createdAt": "2026-11-09 03:25"
   }
 ]
