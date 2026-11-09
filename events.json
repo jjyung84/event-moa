@@ -1,14 +1,26 @@
 [
   {
-    "id": "evt_f1ecc4910c",
-    "title": "[던킨도너츠] 네이버페이 결제시 두바이 도넛 4종 50% 할인 (11/9...(21)",
+    "id": "evt_6ccc42412a",
+    "title": "[네이버페이]롯데카드, SK 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
+    "source": "뽐뿌",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "네이버페이",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120568",
+    "createdAt": "2026-11-10 03:39"
+  },
+  {
+    "id": "evt_dcf1ec0669",
+    "title": "[네이버페이] 마이카방문 2종 추가(4)",
     "source": "루리웹",
     "category": "쇼핑/상품권",
     "difficulty": "하",
     "prize": "네이버페이",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108844",
-    "createdAt": "2026-11-09 21:47"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108876",
+    "createdAt": "2026-11-10 03:39"
   }
 ]
