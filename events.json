@@ -9,7 +9,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120568",
-    "createdAt": "2026-11-10 03:39"
+    "createdAt": "2026-11-10 09:29"
   },
   {
     "id": "evt_dcf1ec0669",
@@ -21,6 +21,18 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108876",
-    "createdAt": "2026-11-10 03:39"
+    "createdAt": "2026-11-10 09:29"
+  },
+  {
+    "id": "evt_8895878ce1",
+    "title": "[쿠팡] 아이폰 에어 256GB (1,074,000)(18)",
+    "source": "루리웹",
+    "category": "IT/기기",
+    "difficulty": "하",
+    "prize": "경품/상품권",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108884",
+    "createdAt": "2026-11-10 09:29"
   }
 ]
