@@ -1,50 +1,14 @@
 [
   {
-    "id": "evt_e7f07eabf4",
-    "title": "티머니 GO] 메가 커피 쿠폰 100% 즉시 지급",
-    "source": "뽐뿌",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "커피",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120628",
-    "createdAt": "2026-11-11 09:31"
-  },
-  {
-    "id": "evt_fd8f255d63",
-    "title": "[네이버페이]롯데카드, SK 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120611",
-    "createdAt": "2026-11-11 09:31"
-  },
-  {
-    "id": "evt_079bda0a15",
-    "title": "[KFC] 올데이 치킨나이트 치킨 단품 1+1 (11/11)(21)",
+    "id": "evt_0acd79e4a2",
+    "title": "[갤럭시스토어] BTS WORLD Tour ARIRANG 월페이퍼 (무료...(1)",
     "source": "루리웹",
-    "category": "식음료/외식",
+    "category": "IT/기기",
     "difficulty": "하",
-    "prize": "치킨",
+    "prize": "경품/상품권",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108906",
-    "createdAt": "2026-11-11 09:31"
-  },
-  {
-    "id": "evt_9ea8f7fd6d",
-    "title": "[오늘의집]치킨팝닭강정+찍먹예감치폴레마요+다이제미니초코+고래밥각5개(17...",
-    "source": "루리웹",
-    "category": "식음료/외식",
-    "difficulty": "하",
-    "prize": "치킨",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://bbs.ruliweb.com/market/board/1020/read/108902",
-    "createdAt": "2026-11-11 09:31"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108936",
+    "createdAt": "2026-11-11 15:50"
   }
 ]
