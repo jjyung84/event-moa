@@ -1,5 +1,17 @@
 [
   {
+    "id": "evt_97dd038480",
+    "title": "[네이버페이]롯데카드, SK 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
+    "source": "뽐뿌",
+    "category": "쇼핑/상품권",
+    "difficulty": "하",
+    "prize": "네이버페이",
+    "isHoney": true,
+    "endDate": "상시/본문참고",
+    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120648",
+    "createdAt": "2026-11-12 03:39"
+  },
+  {
     "id": "evt_0acd79e4a2",
     "title": "[갤럭시스토어] BTS WORLD Tour ARIRANG 월페이퍼 (무료...(1)",
     "source": "루리웹",
@@ -9,7 +21,7 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108936",
-    "createdAt": "2026-11-11 21:47"
+    "createdAt": "2026-11-12 03:39"
   },
   {
     "id": "evt_bdfa51f648",
@@ -21,6 +33,6 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://www.clien.net/service/board/jirum/19290761",
-    "createdAt": "2026-11-11 21:47"
+    "createdAt": "2026-11-12 03:39"
   }
 ]
