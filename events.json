@@ -1,19 +1,7 @@
 [
   {
-    "id": "evt_97dd038480",
-    "title": "[네이버페이]롯데카드, SK 등 받으세요 (& 라이브, 운세, 보험, 랜덤, 마이펫)",
-    "source": "뽐뿌",
-    "category": "쇼핑/상품권",
-    "difficulty": "하",
-    "prize": "네이버페이",
-    "isHoney": true,
-    "endDate": "상시/본문참고",
-    "url": "https://www.ppomppu.co.kr/zboard/view.php?id=coupon&page=1&divpage=21&no=120648",
-    "createdAt": "2026-11-12 09:45"
-  },
-  {
     "id": "evt_905c5213c6",
-    "title": "[닌텐도스토어]시간의 오카리나 젤다의 전설 악기(추첨 판매 응모)(3)",
+    "title": "[닌텐도스토어]시간의 오카리나 젤다의 전설 악기(추첨 판매 응모)(37)",
     "source": "루리웹",
     "category": "IT/기기",
     "difficulty": "하",
@@ -21,18 +9,18 @@
     "isHoney": true,
     "endDate": "상시/본문참고",
     "url": "https://bbs.ruliweb.com/market/board/1020/read/108965",
-    "createdAt": "2026-11-12 09:45"
+    "createdAt": "2026-11-12 15:52"
   },
   {
-    "id": "evt_bdfa51f648",
-    "title": "무료나눔 커피",
-    "source": "클리앙",
-    "category": "식음료/외식",
+    "id": "evt_84bfd85048",
+    "title": "[쉐이크쉑] 네이버페이 결제시 30% 할인 (11/12~15)(3)",
+    "source": "루리웹",
+    "category": "쇼핑/상품권",
     "difficulty": "하",
-    "prize": "커피",
+    "prize": "네이버페이",
     "isHoney": true,
     "endDate": "상시/본문참고",
-    "url": "https://www.clien.net/service/board/jirum/19290761",
-    "createdAt": "2026-11-12 09:45"
+    "url": "https://bbs.ruliweb.com/market/board/1020/read/108971",
+    "createdAt": "2026-11-12 15:52"
   }
 ]
